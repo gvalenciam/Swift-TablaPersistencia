@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0EF73D081C49AA210085B6AC"
-               BuildableName = "Swift-TablaLibros.app"
-               BlueprintName = "Swift-TablaLibros"
-               ReferencedContainer = "container:Swift-TablaLibros.xcodeproj">
+               BuildableName = "Swift-TablaLibrosPersistencia.app"
+               BlueprintName = "Swift-TablaLibrosPersistencia"
+               ReferencedContainer = "container:Swift-TablaLibrosPersistencia.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0EF73D081C49AA210085B6AC"
-            BuildableName = "Swift-TablaLibros.app"
-            BlueprintName = "Swift-TablaLibros"
-            ReferencedContainer = "container:Swift-TablaLibros.xcodeproj">
+            BuildableName = "Swift-TablaLibrosPersistencia.app"
+            BlueprintName = "Swift-TablaLibrosPersistencia"
+            ReferencedContainer = "container:Swift-TablaLibrosPersistencia.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0EF73D081C49AA210085B6AC"
-            BuildableName = "Swift-TablaLibros.app"
-            BlueprintName = "Swift-TablaLibros"
-            ReferencedContainer = "container:Swift-TablaLibros.xcodeproj">
+            BuildableName = "Swift-TablaLibrosPersistencia.app"
+            BlueprintName = "Swift-TablaLibrosPersistencia"
+            ReferencedContainer = "container:Swift-TablaLibrosPersistencia.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0EF73D081C49AA210085B6AC"
-            BuildableName = "Swift-TablaLibros.app"
-            BlueprintName = "Swift-TablaLibros"
-            ReferencedContainer = "container:Swift-TablaLibros.xcodeproj">
+            BuildableName = "Swift-TablaLibrosPersistencia.app"
+            BlueprintName = "Swift-TablaLibrosPersistencia"
+            ReferencedContainer = "container:Swift-TablaLibrosPersistencia.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

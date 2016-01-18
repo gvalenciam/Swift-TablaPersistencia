@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0EF73D091C49AA210085B6AC /* Swift-TablaLibros.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-TablaLibros.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EF73D091C49AA210085B6AC /* Swift-TablaLibrosPersistencia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-TablaLibrosPersistencia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF73D0C1C49AA210085B6AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EF73D141C49AA210085B6AC /* Swift_TablaLibros.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Swift_TablaLibros.xcdatamodel; sourceTree = "<group>"; };
 		0EF73D161C49AA210085B6AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		0EF73D0A1C49AA210085B6AC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0EF73D091C49AA210085B6AC /* Swift-TablaLibros.app */,
+				0EF73D091C49AA210085B6AC /* Swift-TablaLibrosPersistencia.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,9 +76,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0EF73D081C49AA210085B6AC /* Swift-TablaLibros */ = {
+		0EF73D081C49AA210085B6AC /* Swift-TablaLibrosPersistencia */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0EF73D1E1C49AA210085B6AC /* Build configuration list for PBXNativeTarget "Swift-TablaLibros" */;
+			buildConfigurationList = 0EF73D1E1C49AA210085B6AC /* Build configuration list for PBXNativeTarget "Swift-TablaLibrosPersistencia" */;
 			buildPhases = (
 				0EF73D051C49AA210085B6AC /* Sources */,
 				0EF73D061C49AA210085B6AC /* Frameworks */,
@@ -88,9 +88,9 @@
 			);
 			dependencies = (
 			);
-			name = "Swift-TablaLibros";
+			name = "Swift-TablaLibrosPersistencia";
 			productName = "Swift-TablaLibros";
-			productReference = 0EF73D091C49AA210085B6AC /* Swift-TablaLibros.app */;
+			productReference = 0EF73D091C49AA210085B6AC /* Swift-TablaLibrosPersistencia.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -109,7 +109,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0EF73D041C49AA210085B6AC /* Build configuration list for PBXProject "Swift-TablaLibros" */;
+			buildConfigurationList = 0EF73D041C49AA210085B6AC /* Build configuration list for PBXProject "Swift-TablaLibrosPersistencia" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -122,7 +122,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0EF73D081C49AA210085B6AC /* Swift-TablaLibros */,
+				0EF73D081C49AA210085B6AC /* Swift-TablaLibrosPersistencia */,
 			);
 		};
 /* End PBXProject section */
@@ -257,7 +257,7 @@
 				INFOPLIST_FILE = "Swift-TablaLibros/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "PUCP.Swift-TablaLibros";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Swift-TablaLibrosPersistencia";
 			};
 			name = Debug;
 		};
@@ -268,14 +268,14 @@
 				INFOPLIST_FILE = "Swift-TablaLibros/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "PUCP.Swift-TablaLibros";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Swift-TablaLibrosPersistencia";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0EF73D041C49AA210085B6AC /* Build configuration list for PBXProject "Swift-TablaLibros" */ = {
+		0EF73D041C49AA210085B6AC /* Build configuration list for PBXProject "Swift-TablaLibrosPersistencia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0EF73D1C1C49AA210085B6AC /* Debug */,
@@ -284,7 +284,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0EF73D1E1C49AA210085B6AC /* Build configuration list for PBXNativeTarget "Swift-TablaLibros" */ = {
+		0EF73D1E1C49AA210085B6AC /* Build configuration list for PBXNativeTarget "Swift-TablaLibrosPersistencia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0EF73D1F1C49AA210085B6AC /* Debug */,

@@ -8,7 +8,7 @@
         <!--TVC-->
         <scene sceneID="bQG-t9-Ywr">
             <objects>
-                <tableViewController id="LpB-dh-2cs" customClass="TVC" customModule="Swift_TablaLibros" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="LpB-dh-2cs" customClass="TVC" customModule="Swift_TablaLibrosPersistencia" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="yWw-BQ-n9j">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,7 +54,7 @@
         <!--Vista Detalle View Controller-->
         <scene sceneID="0R7-nH-hqv">
             <objects>
-                <viewController id="rTY-es-sa5" customClass="VistaDetalleViewController" customModule="Swift_TablaLibros" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rTY-es-sa5" customClass="VistaDetalleViewController" customModule="Swift_TablaLibrosPersistencia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TOx-LK-cAr"/>
                         <viewControllerLayoutGuide type="bottom" id="ptX-QL-wef"/>

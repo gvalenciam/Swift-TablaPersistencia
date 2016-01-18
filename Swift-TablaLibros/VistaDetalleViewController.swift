@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 var tit = ""
 var aut = ""
 var ima : UIImage? = nil
+var contextoGlobal = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+var bandera = 0
 
 class VistaDetalleViewController: UIViewController {
 
@@ -22,12 +25,17 @@ class VistaDetalleViewController: UIViewController {
     @IBOutlet weak var Imagen: UIImageView!
     @IBOutlet weak var IBN: UITextField!
     
+    var contexto : NSManagedObjectContext? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.contexto = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        contextoGlobal = contexto!
         Titulo.text = tit
         Autor.text = aut
         Imagen.image = ima
+        
         // Do any additional setup after loading the view.
     }
 
@@ -37,8 +45,26 @@ class VistaDetalleViewController: UIViewController {
     }
     
     
-    
-    @IBAction func Search(sender: AnyObject) {
+    @IBAction func Search(sender: UITextField) {
+        
+        let libroEntidad = NSEntityDescription.entityForName("Libro", inManagedObjectContext: self.contexto!)
+        
+        let peticion = libroEntidad?.managedObjectModel.fetchRequestFromTemplateWithName("petLibro", substitutionVariables: ["iSBN": sender.text!])
+        
+        do
+        {
+            let libroEntidad2 = try self.contexto?.executeFetchRequest(peticion!)
+            
+            if (libroEntidad2?.count > 0)
+            {
+                bandera = 1
+                return
+            }
+        }
+        catch
+        {
+            
+        }
         
         Start()
         textFieldShouldReturn(IBN)
@@ -46,6 +72,7 @@ class VistaDetalleViewController: UIViewController {
 
     func Start()
     {
+        
         
         self.Imagen.image = nil
         self.Titulo.text = "-"
@@ -86,7 +113,7 @@ class VistaDetalleViewController: UIViewController {
                     if (dico2["cover"] != nil)
                     {
                         let dico4 = dico2["cover"] as! NSDictionary
-                        let url0 = NSURL(string: dico4["small"] as! NSString as String)
+                        let url0 = NSURL(string: dico4["large"] as! NSString as String)
                         let data0 = NSData(contentsOfURL: url0!)
                         self.Imagen.image = UIImage(data: data0!)
                         ima = UIImage(data: data0!)
@@ -121,6 +148,34 @@ class VistaDetalleViewController: UIViewController {
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
             
+            if(tit != "-" || aut != "-")
+            {
+                let nuevoLibroEntidad = NSEntityDescription.insertNewObjectForEntityForName("Libro", inManagedObjectContext: self.contexto!)
+                nuevoLibroEntidad.setValue(tit, forKey: "titulo")
+                nuevoLibroEntidad.setValue(aut, forKey: "autor")
+                nuevoLibroEntidad.setValue(IBN.text!, forKey: "iSBN")
+            
+                if (ima != nil)
+                {
+                    nuevoLibroEntidad.setValue(crearImagenEntidad(ima!), forKey: "tiene")
+                }
+                else
+                {
+                    let vacio = UIImage(named: "Empty.png")
+                    nuevoLibroEntidad.setValue(crearImagenEntidad(vacio!), forKey: "tiene")
+                }
+                bandera = 0
+            
+                do
+                {
+                    try self.contexto?.save()
+                }
+                catch
+                {
+                
+                }
+                }
+            
         }
         
         
@@ -129,6 +184,13 @@ class VistaDetalleViewController: UIViewController {
         
     }
     
+    func crearImagenEntidad(imagen : UIImage) -> NSObject
+    {
+        let imagenEntidad = NSEntityDescription.insertNewObjectForEntityForName("Portada", inManagedObjectContext: self.contexto!)
+        imagenEntidad.setValue(UIImagePNGRepresentation(imagen), forKey: "imagen")
+        
+        return imagenEntidad
+    }
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
@@ -140,14 +202,16 @@ class VistaDetalleViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if(segue.identifier == "Atras")
+        if(segue.identifier == "Atras" && bandera == 0)
         {
-            
             let anterior = segue.destinationViewController  as! TVC
             anterior.tableView.beginUpdates()
             anterior.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: libros.count-1, inSection: 0)], withRowAnimation: .Automatic)
             anterior.tableView.endUpdates()
             anterior.tableView.reloadData()
+            
+            bandera = 1
+            banderayacargo = 1
         }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.

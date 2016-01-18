@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 var libros : Array<Array<String>> = Array<Array<String>>()
 var imagenes : Array<UIImage> = Array<UIImage>()
 var titulo = ""
 var autor = ""
-
+var banderayacargo = 0
 
 class TVC: UITableViewController {
 
@@ -20,7 +21,7 @@ class TVC: UITableViewController {
     var nuevotitulo = ""
     var nuevoautor = ""
     
-    
+    /*
     @IBAction func Go(sender: AnyObject) {
         
         libros.append([titulo,autor])
@@ -30,11 +31,38 @@ class TVC: UITableViewController {
         tableView.reloadData()
         
     }
+    */
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if (banderayacargo == 0 && libros.count == 0)
+        {
+        let libroEntidad = NSEntityDescription.entityForName("Libro", inManagedObjectContext: contextoGlobal)
         
+        let peticion = libroEntidad?.managedObjectModel.fetchRequestTemplateForName("petLibros")
+        
+        do
+        {
+            let librosEntidad = try contextoGlobal.executeFetchRequest(peticion!)
+            
+            for libroEntidad2 in librosEntidad
+            {
+                let tituloCelda = libroEntidad2.valueForKey("titulo") as! String
+                let autorCelda = libroEntidad2.valueForKey("autor") as! String
+                let imagenCelda = libroEntidad2.valueForKey("tiene") as! NSObject
+                
+                let img = UIImage(data: imagenCelda.valueForKey("imagen") as! NSData)
+                
+                libros.append([tituloCelda,autorCelda])
+                imagenes.append(img!)
+            }
+        }
+        catch
+        {
+            
+        }
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

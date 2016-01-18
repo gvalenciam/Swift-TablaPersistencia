@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Automatic">
+    <entity name="Libro" syncable="YES">
+        <attribute name="autor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iSBN" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titulo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tiene" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Portada" inverseName="pertenece" inverseEntity="Portada" syncable="YES"/>
+    </entity>
+    <entity name="Portada" syncable="YES">
+        <attribute name="imagen" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="pertenece" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Libro" inverseName="tiene" inverseEntity="Libro" syncable="YES"/>
+    </entity>
+    <fetchRequest name="petLibro" entity="Libro" predicateString="iSBN == $iSBN"/>
+    <fetchRequest name="petLibros" entity="Libro"/>
+    <elements>
+        <element name="Libro" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Portada" positionX="-54" positionY="9" width="128" height="75"/>
+    </elements>
 </model>

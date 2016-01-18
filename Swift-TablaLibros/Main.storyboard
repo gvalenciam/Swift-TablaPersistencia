@@ -13,6 +13,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="1" green="0.8305262699" blue="0.58089247129999999" alpha="1" colorSpace="calibratedRGB"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" barStyle="black" id="BQg-2b-Rnc">
                             <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -20,7 +21,7 @@
                                 <navigationItem title="Libros Buscados" id="9pe-NC-xhY">
                                     <barButtonItem key="rightBarButtonItem" systemItem="add" id="wA1-by-7ec">
                                         <connections>
-                                            <segue destination="rTY-es-sa5" kind="show" identifier="Go" id="z2d-eb-e1A"/>
+                                            <segue destination="rTY-es-sa5" kind="show" identifier="Go" id="B4N-gx-OUW"/>
                                         </connections>
                                     </barButtonItem>
                                 </navigationItem>
@@ -84,7 +85,7 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="-" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TNd-7J-BOT">
                                 <rect key="frame" x="121" y="221" width="174" height="69"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.99993477779999995" green="1" blue="0.75103058769999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="69" id="9QI-kJ-2Jr"/>
                                     <constraint firstAttribute="width" constant="174" id="lnM-F7-tay"/>
@@ -122,11 +123,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                 <connections>
-                                    <action selector="Search:" destination="rTY-es-sa5" eventType="primaryActionTriggered" id="HSp-lP-PtB"/>
+                                    <action selector="Search:" destination="rTY-es-sa5" eventType="primaryActionTriggered" id="8oL-qs-80l"/>
                                 </connections>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="-" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nte-Ik-2XJ">
+                                <rect key="frame" x="292" y="221" width="187" height="69"/>
+                                <color key="backgroundColor" red="0.99993477779999995" green="1" blue="0.75103058769999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="69" id="IzE-M7-YnH"/>
+                                    <constraint firstAttribute="width" constant="187" id="TRL-3S-PsD"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="187" id="azc-Bb-Y2b"/>
+                                    <constraint firstAttribute="height" constant="69" id="bJ9-Uz-2p7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3Z-qK-KSs">
                                 <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                                <color key="backgroundColor" red="0.99993477779999995" green="1" blue="0.75103058769999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem id="7v4-5m-DOM">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="qCr-A4-8Qa">
@@ -137,20 +151,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="-" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nte-Ik-2XJ">
-                                <rect key="frame" x="292" y="221" width="187" height="69"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="69" id="IzE-M7-YnH"/>
-                                    <constraint firstAttribute="width" constant="187" id="TRL-3S-PsD"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="187" id="azc-Bb-Y2b"/>
-                                    <constraint firstAttribute="height" constant="69" id="bJ9-Uz-2p7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.99993477779999995" green="1" blue="0.75103058769999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="TOx-LK-cAr" firstAttribute="top" secondItem="a3Z-qK-KSs" secondAttribute="bottom" constant="-52" id="2Jh-gH-61T"/>
                             <constraint firstItem="a3Z-qK-KSs" firstAttribute="leading" secondItem="SGT-8b-9XE" secondAttribute="leading" id="2Tc-mM-s4T"/>
@@ -195,6 +197,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="z2d-eb-e1A"/>
+        <segue reference="B4N-gx-OUW"/>
     </inferredMetricsTieBreakers>
 </document>
